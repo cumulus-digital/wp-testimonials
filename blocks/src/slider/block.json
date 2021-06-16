@@ -1,0 +1,112 @@
+{
+	"apiVersion": 2,
+
+	"name": "cumulus-gutenberg/testimonials-slider",
+
+	"title": "Testimonial Slider",
+
+	"description": "Display testimonials in a slider",
+
+	"category": "widgets",
+
+	"keywords": [ "testimonial", "slider" ],
+
+	"icon": {
+	    "src": "slides",
+	    "foreground": "#3399cc"
+	},
+
+	"supports": {
+	    "html": false,
+	    "anchor": true,
+	    "customClassName": false
+	},
+
+	"attributes": {
+	    "categories": {
+	        "type": "array",
+	        "items": {
+	            "type": "object"
+	        },
+	        "default": []
+	    },
+	    "tags": {
+	        "type": "array",
+	        "items": {
+	            "type": "object"
+	        },
+	        "default": []
+	    },
+	    "postsToShow": {
+	        "type": "number",
+	        "default": 0
+	    },
+	    "order": {
+	        "type": "string",
+	        "default": "desc"
+	    },
+	    "orderBy": {
+	        "type": "string",
+	        "default": "rand"
+	    },
+	    "showContent": {
+	        "type": "string",
+	        "default": "full"
+	    },
+	    "showLogo": {
+	        "type": "boolean",
+	        "default": true
+	    },
+	    "showCustomerName": {
+	        "type": "boolean",
+	        "default": true
+	    },
+	    "showCustomerTitle": {
+	        "type": "boolean",
+	        "default": true
+	    },
+	    "showCompany": {
+	        "type": "boolean",
+	        "default": true
+	    },
+	    "slidesToShow": {
+	        "type": "number",
+	        "default": 1
+	    },
+	    "slidesToScroll": {
+	        "type": "number",
+	        "default": 1
+	    },
+	    "autoplay": {
+	        "type": "boolean",
+	        "default": true
+	    },
+	    "autoplaySpeed": {
+	        "type": "number",
+	        "default": 8
+	    },
+	    "transitionSpeed": {
+	        "type": "number",
+	        "default": 0.5
+	    },
+	    "showArrows": {
+	        "type": "boolean",
+	        "default": true
+	    },
+	    "showDots": {
+	        "type": "boolean",
+	        "default": true
+	    },
+	    "animationType": {
+	        "type": "string",
+	        "default": "slide"
+	    },
+	    "verticalAlign": {
+	    	"type": "string",
+	    	"default": "center"
+	    }
+	},
+
+	"editorScript": "file:../../../build/block_slider_backend.js",
+	"editorStyle": "file:../../../build/block_slider_backend.css"
+}
