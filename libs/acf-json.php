@@ -17,6 +17,16 @@ class ACF_JSON {
 			array(&$this, 'update_field_group'),
 			1, 1
 		);
+		add_filter(
+			'acf/settings/load_json',
+			array(&$this, 'load_json'),
+			1, 1
+		);
+		add_filter(
+			'acf/settings/save_json',
+			array(&$this, 'save_json'),
+			1, 1
+		);
 	}
 
 	public function update_field_group($group) {
@@ -38,5 +48,19 @@ class ACF_JSON {
 		);
 		$path = dirname(\plugin_dir_path(__FILE__)) . '/acf-json';
 		return $path;
+	}
+
+	public function save_json($path) {
+		if (isset($_POST['acf_field_group']['key'])) {
+			if (in_array($_POST['acf_field_group']['key'], $this->groups)) {
+				return BASEPATH . '/acf-json';
+			}
+		}
+		return $path;
+	}
+
+	public function load_json($paths) {
+		$paths[] = BASEPATH . '/acf-json';
+		return $paths;
 	}
 }

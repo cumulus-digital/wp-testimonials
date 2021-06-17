@@ -1,6 +1,6 @@
 {
 	"name": "wp-testimonials",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Provides a Custom Post Type and Gutenberg blocks for creating and displaying Testimonials.",
 	"author": "vena <daniel.vena@cumulus.com>",
 	"license": "UNLICENSED",
