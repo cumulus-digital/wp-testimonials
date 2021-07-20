@@ -2,31 +2,33 @@
 /**
  * Block Rendering Template
  */
+
 namespace CUMULUS\Wordpress\Testimonials\Blocks\Slider;
+
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) exit;
+\defined('ABSPATH') || exit('No direct access allowed.');
 ?>
 <div
 	class="<?php echo $class ?> splide <?php
-		switch($attr['verticalAlign']) {
-			case 'top':
-				echo 'splide-align-items-top';
-				break;
-			case 'bottom':
-				echo 'splide-align-items-bottom';
-				break;
-			case 'center':
-			default:
-				echo 'splide-align-items-center';
-				break;
-		}
-	?>"
+        switch ($attr['verticalAlign']) {
+            case 'top':
+                echo 'splide-align-items-top';
+                break;
+            case 'bottom':
+                echo 'splide-align-items-bottom';
+                break;
+            case 'center':
+            default:
+                echo 'splide-align-items-center';
+                break;
+        }
+    ?>"
 	data-splide="<?php echo \esc_attr(json_encode($sliderOptions)) ?>"
 >
 	<div class="splide__track">
 		<ul class="splide__list">
 			<?php if (count($posts)): ?>
-				<?php foreach($posts as $post): ?>
+				<?php foreach ($posts as $post): ?>
 					<li class="splide__slide">
 						<article class="cmls-testimonial <?php echo $class ?>--slide">
 							<?php if ($attr['showContent'] === 'full'): ?>
@@ -40,20 +42,20 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 							<?php endif; ?>
 							<footer class="<?php echo $class ?>--footer">
 								<?php if ($attr['showLogo']): ?>
-									<img 
+									<img
 										class="<?php echo $class ?>--logo"
 										data-splide-lazy="<?php
-											echo \get_the_post_thumbnail_url($post, 'full')
-										?>"
+                                            echo \get_the_post_thumbnail_url($post, 'full')
+                                        ?>"
 									>
 								<?php endif ?>
 								<?php
-									if (
-										$attr['showCustomerName'] ||
-										$attr['showCustomerTitle'] ||
-										$attr['showCompany']
-									):
-								?>
+                                    if (
+                                        $attr['showCustomerName'] ||
+                                        $attr['showCustomerTitle'] ||
+                                        $attr['showCompany']
+                                    ):
+                                ?>
 									<div class="meta <?php echo $class ?>--customer">
 										<?php if ($attr['showCustomerName']): ?>
 											<h3 class="<?php echo $class ?>--customer_name">

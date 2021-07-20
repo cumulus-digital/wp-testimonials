@@ -1,7 +1,9 @@
 <?php
+
 namespace CUMULUS\Wordpress\Testimonials;
+
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) exit;
+\defined( 'ABSPATH' ) || exit( 'No direct access allowed.' );
 
 // Import blocks
-require BASEPATH . '/blocks/index.php';
+require \CUMULUS\Wordpress\Testimonials\BASEPATH . '/blocks/index.php';

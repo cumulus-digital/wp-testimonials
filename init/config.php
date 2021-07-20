@@ -1,5 +1,6 @@
 <?php
-namespace CUMULUS\Wordpress\Testimonials;
-// Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) exit;
 
+namespace CUMULUS\Wordpress\Testimonials;
+
+// Exit if accessed directly.
+\defined( 'ABSPATH' ) || exit( 'No direct access allowed.' );
