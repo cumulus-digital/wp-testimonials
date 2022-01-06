@@ -47,6 +47,7 @@ namespace CUMULUS\Wordpress\Testimonials\Blocks\Slider;
 										data-splide-lazy="<?php
                                             echo \get_the_post_thumbnail_url($post, 'full')
                                         ?>"
+										alt=""
 									>
 								<?php endif ?>
 								<?php
