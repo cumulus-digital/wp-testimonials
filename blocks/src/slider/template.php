@@ -31,16 +31,8 @@ namespace CUMULUS\Wordpress\Testimonials\Blocks\Slider;
 				<?php foreach ($posts as $post): ?>
 					<li class="splide__slide">
 						<article class="cmls-testimonial <?php echo $class ?>--slide">
-							<?php if ($attr['showContent'] === 'full'): ?>
-								<div class="body <?php echo $class ?>--content">
-									<?php echo \wp_kses_post(\get_the_content(null, false, $post)); ?>
-								</div>
-							<?php else: ?>
-								<div class="body <?php echo $class ?>--content">
-									<?php echo \wp_kses_post(\get_the_excerpt($post)); ?>
-								</div>
-							<?php endif; ?>
-							<footer class="<?php echo $class ?>--footer">
+
+							<header class="<?php echo $class ?>--footer">
 								<?php if ($attr['showLogo']): ?>
 									<img
 										class="<?php echo $class ?>--logo"
@@ -59,9 +51,9 @@ namespace CUMULUS\Wordpress\Testimonials\Blocks\Slider;
                                 ?>
 									<div class="meta <?php echo $class ?>--customer">
 										<?php if ($attr['showCustomerName']): ?>
-											<h3 class="<?php echo $class ?>--customer_name">
+											<h2 class="<?php echo $class ?>--customer_name">
 												<?php echo \esc_html(strip_tags($post->acf_fields['cmls_testimonial-customer_name'])) ?>
-											</h3>
+											</h2>
 										<?php endif ?>
 										<?php if ($attr['showCustomerTitle']): ?>
 											<p class="<?php echo $class ?>--customer_title">
@@ -75,7 +67,17 @@ namespace CUMULUS\Wordpress\Testimonials\Blocks\Slider;
 										<?php endif ?>
 									</div>
 								<?php endif ?>
-							</footer>
+							</header>
+
+							<?php if ($attr['showContent'] === 'full'): ?>
+								<div class="body <?php echo $class ?>--content">
+									<?php echo \wp_kses_post(\get_the_content(null, false, $post)); ?>
+								</div>
+							<?php else: ?>
+								<div class="body <?php echo $class ?>--content">
+									<?php echo \wp_kses_post(\get_the_excerpt($post)); ?>
+								</div>
+							<?php endif; ?>
 						</article>
 					</li>
 				<?php endforeach ?>

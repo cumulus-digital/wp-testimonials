@@ -3,11 +3,16 @@
 article.cmls-testimonial,
 :root .editor-styles-wrapper article.cmls-testimonial {
 
-	> footer {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 1em;
+
+	> header {
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
 		align-content: center;
+		text-align: left;
 		font-size: 0.7rem;
 		line-height: 1.25;
 		color: #555;
@@ -20,7 +25,7 @@ article.cmls-testimonial,
 			margin-right: 1em;
 		}
 
-		h3 {
+		h2 {
 			color: #222;
 			font-size: 1.5em;
 			font-weight: 400;
@@ -51,6 +56,10 @@ body.post-type-archive-cmls-testimonial {
 
 		article.cmls-testimonial {
 
+			display: flex;
+			flex-direction: column-reverse;
+			gap: 1em;
+
 			border-radius: 0.25em;
 			box-shadow: 0 0 0.75em rgba(0, 0, 0, 0.15);
 			overflow: hidden;
@@ -58,15 +67,13 @@ body.post-type-archive-cmls-testimonial {
 			width: calc(33% - 1em);
 			height: min-content;
 			margin: 0;
+			padding: 1em;
 
 			font-size: 1em;
 
-			> .body {
-				padding-top: 1em;
-			}
-
-			> footer {
-				padding: 0 1em 1em;
+			> .body,
+			> header {
+				padding: 0;
 			}
 
 			@include editor_styles {
@@ -78,7 +85,7 @@ body.post-type-archive-cmls-testimonial {
 				@include phone {
 					width: 100%;
 				}
-				
+
 			}
 
 		}

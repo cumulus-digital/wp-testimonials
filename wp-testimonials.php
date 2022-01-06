@@ -8,7 +8,7 @@ namespace CUMULUS\Wordpress\Testimonials;
  * GitHub Plugin URI: https://github.com/cumulus-digital/wp-testimonials/
  * Primary Branch: main
  * Description: Provides a Custom Post Type and Gutenberg blocks for creating and displaying Testimonials. NOTE: his plugin uses hooks and filters of the CMLS Base Theme and may not display content properly in any other theme or child of CMLS Base Theme.
- * Version: 0.1.4
+ * Version: 0.1.5
  * Author: vena
  * License: UNLICENSED
  */
